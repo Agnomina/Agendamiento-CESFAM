@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Prototipo visual de agendamiento de horas para CESFAM Juan Soto Fernández.">
+  <title>Mis horas | CESFAM Juan Soto Fernández</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <link href="portal.css" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="CESFAM Juan Soto Fernández, inicio">
+        <img class="brand-logo" src="assets/agendamex-logo.png" alt="Agendamex, agendamiento médico del CESFAM Juan Soto Fernández">
+      </a>
+      <div class="sidebar-label">MENÚ PRINCIPAL</div>
+      <nav class="nav-menu">
+        <a class="nav-item active" href="#inicio"><span aria-hidden="true">⌂</span> Inicio</a>
+        <a class="nav-item" href="#mis-horas"><span aria-hidden="true">▦</span> Mis horas</a>
+        <a class="nav-item" href="#agendar"><span aria-hidden="true">＋</span> Agendar una hora</a>
+      </nav>
+      <div class="sidebar-help">
+        <strong>¿Necesita ayuda?</strong>
+        <p>Estamos aquí para orientarle con sus horas.</p>
+        <a href="tel:800500809">Llamar al CESFAM</a>
+      </div>
+      <div class="sidebar-footer">Atención Primaria de Salud</div>
+    </aside>
+    <main id="contenido" class="main-content">
+      <header class="topbar">
+        <div class="d-flex align-items-center gap-3">
+          <span class="mobile-brand-mark" aria-hidden="true">+</span>
+          <div>
+            <p class="eyebrow mb-1">PORTAL DE PACIENTES</p>
+            <p class="topbar-title mb-0">Mi espacio de salud</p>
+          </div>
+        </div>
+        <div class="profile">
+          <div id="avatar-usuario" class="profile-avatar" aria-hidden="true">RM</div>
+          <div class="profile-copy">
+            <strong id="nombre-usuario">Rosa Elena Muñoz</strong>
+            <span>Paciente</span>
+          </div>
+          <a id="cerrar-sesion" class="logout-link" href="index.html">Salir</a>
+        </div>
+      </header>
+      <div class="page-container">
+        <section id="inicio" class="welcome-row">
+          <div>
+            <p id="fecha-actual" class="eyebrow"></p>
+            <h1>Hola, <span id="nombre-bienvenida">Rosa</span></h1>
+            <p class="welcome-copy">Aquí puede revisar sus horas y encontrar la atención que necesita.</p>
+          </div>
+          <a class="btn btn-primary btn-large" href="#agendar"><span aria-hidden="true">＋</span> Agendar nueva hora</a>
+        </section>
+        <section class="notice-card" aria-label="Aviso importante">
+          <div>
+            <strong>Su salud, a su ritmo</strong>
+            <p class="mb-0">Revise los detalles de sus atenciones en cualquier momento. Si necesita ayuda, un familiar puede acompañarle.</p>
+          </div>
+        </section>
+        <section id="mis-horas" class="section-block">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">AGENDA</p>
+              <h2 id="titulo-mis-horas" tabindex="-1">Sus horas agendadas</h2>
+            </div>
+          </div>
+          <p id="error-horas" class="appointment-error" role="alert" hidden>No se pudieron actualizar sus horas en este dispositivo.</p>
+          <p id="mensaje-horas" class="appointment-feedback" role="status" aria-live="polite"></p>
+          <div id="lista-horas" class="appointment-list" aria-live="polite"></div>
+        </section>
+        <section id="agendar" class="section-block">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">NUEVA ATENCIÓN</p>
+              <h2>Agendar una hora</h2>
+            </div>
+            <span id="step-caption" class="step-caption">Paso 1 de 3</span>
+          </div>
+          <div class="booking-card">
+            <div id="stepper" class="stepper" aria-label="Paso 1 de 3">
+              <div class="step active" data-step-indicator="1"><span>1</span><strong>Especialidad</strong></div>
+              <div class="step-line"></div>
+              <div class="step" data-step-indicator="2"><span>2</span><strong>Día y hora</strong></div>
+              <div class="step-line"></div>
+              <div class="step" data-step-indicator="3"><span>3</span><strong>Confirmar</strong></div>
+            </div>
+            <div class="booking-content">
+              <section class="booking-stage" data-booking-step="1" aria-labelledby="paso-especialidad">
+                <div class="booking-intro">
+                  <h3 id="paso-especialidad">Elija una especialidad</h3>
+                  <p>Seleccione el tipo de atención que necesita.</p>
+                </div>
+                <div class="row g-3">
+                  <div class="col-12 col-md-6">
+                    <button class="service-option" type="button" aria-pressed="false" data-specialty="Medicina General">
+                      <span class="service-symbol" aria-hidden="true">+</span>
+                      <span><strong>Medicina General</strong><small>Controles y consultas de salud</small></span>
+                    </button>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <button class="service-option" type="button" aria-pressed="false" data-specialty="Odontología">
+                      <span class="service-symbol dental" aria-hidden="true">✚</span>
+                      <span><strong>Odontología</strong><small>Atención y salud bucal</small></span>
+                    </button>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <button class="service-option" type="button" aria-pressed="false" data-specialty="Control cardiovascular">
+                      <span class="service-symbol heart" aria-hidden="true">♡</span>
+                      <span><strong>Control cardiovascular</strong><small>Seguimiento de su salud</small></span>
+                    </button>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <button class="service-option" type="button" aria-pressed="false" data-specialty="Salud mental">
+                      <span class="service-symbol mind" aria-hidden="true">☼</span>
+                      <span><strong>Salud mental</strong><small>Apoyo y bienestar emocional</small></span>
+                    </button>
+                  </div>
+                </div>
+                <p class="static-note">Disponibilidad.</p>
+                <div class="booking-actions">
+                  <button id="continuar-especialidad" class="prototype-button" type="button" disabled>Continuar</button>
+                </div>
+              </section>
+              <section class="booking-stage" data-booking-step="2" aria-labelledby="paso-horario" hidden>
+                <div class="booking-intro">
+                  <h3 id="paso-horario">Elija el día y la hora</h3>
+                  <p>Seleccione una fecha y luego uno de los horarios disponibles.</p>
+                </div>
+                <h4 class="choice-heading">Días disponibles</h4>
+                <div id="fechas-disponibles" class="choice-list" role="group" aria-label="Días disponibles"></div>
+                <h4 class="choice-heading">Horarios disponibles</h4>
+                <div id="horarios-disponibles" class="choice-list" role="group" aria-label="Horarios disponibles"></div>
+                <p id="mensaje-horarios" class="static-note" aria-live="polite">Seleccione un día para ver sus horarios.</p>
+                <div class="booking-actions">
+                  <button id="volver-especialidad" class="prototype-button secondary-button" type="button">Volver</button>
+                  <button id="continuar-horario" class="prototype-button" type="button" disabled>Continuar</button>
+                </div>
+              </section>
+              <section class="booking-stage" data-booking-step="3" aria-labelledby="paso-confirmar" hidden>
+                <div id="resumen-reserva">
+                  <div class="booking-intro">
+                    <h3 id="paso-confirmar">Revise y confirme su hora</h3>
+                    <p>Verifique los datos antes de confirmar.</p>
+                  </div>
+                  <dl class="booking-summary">
+                    <div><dt>Paciente</dt><dd id="resumen-paciente"></dd></div>
+                    <div><dt>Especialidad</dt><dd id="resumen-especialidad"></dd></div>
+                    <div><dt>Día</dt><dd id="resumen-fecha"></dd></div>
+                    <div><dt>Hora</dt><dd id="resumen-hora"></dd></div>
+                  </dl>
+                  <p id="error-almacenamiento" class="storage-error" role="alert" hidden>No se pudo guardar la reserva en este dispositivo. Inténtelo nuevamente.</p>
+                  <div class="booking-actions">
+                    <button id="volver-horario" class="prototype-button secondary-button" type="button">Volver</button>
+                    <button id="confirmar-reserva" class="prototype-button" type="button">Confirmar hora</button>
+                  </div>
+                </div>
+                <div id="reserva-confirmada" class="booking-success" role="status" hidden>
+                  <span class="success-mark" aria-hidden="true">✓</span>
+                  <h3>¡Su hora está confirmada!</h3>
+                  <p id="detalle-confirmacion"></p>
+                  <p>La reserva quedó guardada en este dispositivo.</p>
+                  <button id="agendar-otra-hora" class="prototype-button" type="button">Agendar otra hora</button>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer class="page-footer">
+        <span>CESFAM Juan Soto Fernández</span>
+        <span>Prototipo de interfaz · Información de demostración</span>
+      </footer>
+    </main>
+  </div>
+  <dialog id="dialogo-cancelacion" class="cancel-dialog" aria-labelledby="titulo-cancelacion" aria-describedby="detalle-cancelacion">
+    <h2 id="titulo-cancelacion">¿Cancelar esta hora?</h2>
+    <p id="detalle-cancelacion"></p>
+    <p id="error-cancelacion" class="storage-error" role="alert" hidden>No se pudo cancelar la hora en este dispositivo. Inténtelo nuevamente.</p>
+    <div class="cancel-dialog-actions">
+      <button id="mantener-hora" class="prototype-button secondary-button" type="button">No, mantenerla</button>
+      <button id="confirmar-cancelacion" class="prototype-button danger-button" type="button">Sí, cancelar hora</button>
+    </div>
+  </dialog>
+  <script src="demo-users.js"></script>
+  <script src="portal.js"></script>
+</body>
+</html>

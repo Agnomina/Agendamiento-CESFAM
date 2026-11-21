@@ -1,0 +1,158 @@
+.app-shell { min-height: 100vh; }
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  display: flex;
+  width: 250px;
+  flex-direction: column;
+  padding: 25px 17px;
+  background: var(--navy-dark);
+  color: #fff;
+}
+.brand { display: block; box-sizing: border-box; width: 100%; max-width: 210px; margin: 0 auto 35px; padding: 7px; border-radius: 9px; background: #fff; }
+.brand-logo { display: block; width: 100%; height: auto; }
+.sidebar-label { padding: 0 10px 10px; color: #b7cbd4; font-size: 16px; font-weight: 700; }
+.nav-menu { display: grid; gap: 6px; }
+.nav-item { display: flex; min-height: 48px; align-items: center; gap: 11px; padding: 8px 12px; border-radius: 8px; color: #e2edf1; text-decoration: none; }
+.nav-item span { width: 23px; color: #c7e4e0; font-size: 21px; text-align: center; }
+.nav-item:hover, .nav-item.active { background: #24536a; color: #fff; }
+.sidebar-help { margin: auto 2px 18px; padding: 15px; border: 1px solid #426276; border-radius: 10px; background: #1b4056; }
+.sidebar-help p { margin: 5px 0 8px; color: #d3e2e8; font-size: 18px; }
+.sidebar-help a { color: #bceadd; font-weight: 700; }
+.sidebar-footer { padding-top: 12px; border-top: 1px solid #35576b; color: #c7d7df; font-size: 16px; }
+.main-content { min-height: 100vh; margin-left: 250px; }
+.topbar { display: flex; min-height: 78px; align-items: center; justify-content: space-between; padding: 12px 5%; border-bottom: 1px solid var(--line); background: #fff; }
+.mobile-brand-mark { display: none; }
+.topbar-title { margin: 0; color: var(--navy); font-weight: 700; }
+.profile { display: flex; align-items: center; gap: 10px; }
+.profile-avatar { display: grid; width: 48px; height: 48px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: #dcefeb; color: #165b5b; font-size: 18px; font-weight: 700; }
+.profile-copy strong, .profile-copy span { display: block; }
+.profile-copy strong { font-size: 18px; }
+.profile-copy span { color: var(--muted); font-size: 16px; }
+.logout-link { display: inline-flex; min-height: 48px; align-items: center; margin-left: 10px; padding: 8px; color: #405865; }
+.page-container { width: min(1120px, 100%); margin: auto; padding: 36px 5%; }
+.welcome-row, .section-heading { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.welcome-copy { margin: 7px 0 0; color: var(--muted); }
+.btn-large { min-height: 50px; padding: 10px 18px; background: var(--teal); border-color: var(--teal); font-weight: 700; }
+.notice-card { margin-top: 24px; padding: 15px; border: 1px solid #cce5df; border-radius: 9px; background: #eff8f5; }
+.notice-card p { margin: 2px 0 0; color: #405865; font-size: 18px; }
+.section-block { margin-top: 32px; scroll-margin-top: 16px; }
+.section-heading { margin-bottom: 14px; }
+.appointment-card, .booking-card { border: 1px solid var(--line); border-radius: 11px; background: #fff; }
+.appointment-card { display: flex; align-items: center; gap: 18px; padding: 18px; }
+.appointment-date { display: grid; width: 68px; min-height: 76px; flex: 0 0 auto; place-content: center; border-radius: 8px; background: #e8f4f1; color: #276c69; text-align: center; }
+.appointment-date span { font-size: 16px; font-weight: 700; }
+.appointment-date strong { color: #174e50; font-size: 28px; line-height: 1.1; }
+.appointment-details { flex: 1; }
+.status-badge { color: #17613e; font-size: 18px; font-weight: 700; }
+.status-badge-cancelled { color: #a32121; }
+.appointment-details h3 { margin: 2px 0; font-size: 20px; }
+.appointment-meta { margin: 3px 0; color: #405865; font-size: 18px; }
+.appointment-professional { margin: 0; color: var(--muted); font-size: 16px; }
+.step-caption { color: var(--muted); font-size: 18px; }
+.stepper { display: flex; align-items: center; padding: 15px 22px; border-bottom: 1px solid var(--line); }
+.step { display: flex; align-items: center; gap: 8px; color: #536b76; white-space: nowrap; }
+.step > span { display: grid; width: 36px; height: 36px; place-items: center; border: 2px solid #536b76; border-radius: 50%; font-weight: 700; }
+.step strong { font-size: 18px; }
+.step.completed { color: #145e5c; }
+.step.active { color: #145e5c; }
+.step.active > span { border-color: var(--teal); background: var(--teal); color: #fff; }
+.step-line { height: 1px; flex: 1; margin: 0 12px; background: #d8e1e4; }
+.booking-content { padding: 20px 22px; }
+.booking-intro h3 { margin: 0; font-size: 22px; }
+.booking-intro p { margin: 4px 0 15px; color: var(--muted); font-size: 18px; }
+.service-option { display: flex; width: 100%; min-height: 80px; align-items: center; gap: 12px; padding: 11px; border: 2px solid #536b76; border-radius: 8px; background: #fff; color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
+.service-option.selected { border-color: var(--teal); background: #f4fbf8; }
+.service-option:hover { border-color: var(--teal); }
+.service-symbol { display: grid; width: 40px; height: 40px; flex: 0 0 auto; place-items: center; border-radius: 9px; background: #e6f4f0; color: var(--teal); font-size: 23px; }
+.service-option strong, .service-option small { display: block; }
+.service-option strong { color: var(--navy); font-size: 20px; }
+.service-option small { color: var(--muted); font-size: 18px; }
+.static-note { margin: 11px 0 0; color: #536b76; font-size: 18px; }
+.prototype-button { min-height: 56px; margin-top: 12px; padding: 10px 16px; border: 2px solid var(--teal); border-radius: 7px; background: #fff; color: #145f5c; font: inherit; font-size: 20px; font-weight: 700; cursor: pointer; }
+.prototype-button:hover { background: #e8f5f2; }
+.prototype-button:disabled { cursor: not-allowed; opacity: .55; }
+.secondary-button { border-color: #536b76; color: #405865; }
+.booking-actions { display: flex; justify-content: space-between; gap: 12px; margin-top: 18px; }
+.booking-actions .prototype-button { margin-top: 0; }
+.choice-heading { margin: 20px 0 9px; color: var(--navy); font-size: 20px; }
+.choice-list { display: flex; flex-wrap: wrap; gap: 9px; }
+.date-option, .time-option {
+  min-height: 56px;
+  padding: 11px 15px;
+  border: 2px solid #536b76;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.date-option[aria-pressed="true"], .time-option[aria-pressed="true"] {
+  border-color: var(--teal);
+  background: #e8f5f2;
+  color: #145f5c;
+}
+.date-option:hover, .time-option:hover { border-color: var(--teal); }
+.booking-summary { display: grid; gap: 0; margin: 18px 0; border: 1px solid var(--line); border-radius: 9px; }
+.booking-summary > div { display: grid; grid-template-columns: minmax(110px, .7fr) 1.3fr; gap: 12px; padding: 12px 14px; }
+.booking-summary > div + div { border-top: 1px solid var(--line); }
+.booking-summary dt { color: var(--muted); font-size: 18px; font-weight: 700; }
+.booking-summary dd { margin: 0; color: var(--navy); }
+.booking-success { padding: 12px 0; }
+.booking-success h3 { margin: 10px 0 5px; }
+.booking-success p { color: var(--muted); }
+.success-mark { display: grid; width: 48px; height: 48px; place-items: center; border-radius: 50%; background: #d9eee6; color: #145e4a; font-size: 27px; font-weight: 700; }
+.storage-error { margin: 12px 0; color: #a32121; font-size: 18px; font-weight: 700; }
+.appointment-list { display: grid; gap: 12px; }
+.appointments-empty { margin: 0; padding: 17px; border: 1px dashed #536b76; border-radius: 9px; background: #fff; color: var(--muted); font-size: 18px; }
+.appointment-feedback { margin: 0 0 12px; color: #17613e; font-size: 18px; font-weight: 700; }
+.appointment-feedback:empty { display: none; }
+.cancel-appointment { min-height: 48px; margin-top: 10px; padding: 8px 12px; border: 2px solid #8a1f1f; border-radius: 7px; background: #fff; color: #8a1f1f; font: inherit; font-size: 18px; font-weight: 700; cursor: pointer; }
+.cancel-appointment:hover { background: #fff4f2; }
+.appointment-error { margin: 0 0 12px; color: #a32121; font-size: 18px; font-weight: 700; }
+.cancel-dialog { box-sizing: border-box; width: min(520px, calc(100vw - 32px)); padding: 24px; border: 2px solid #536b76; border-radius: 12px; background: #fff; color: var(--ink); }
+.cancel-dialog::backdrop { background: #123247bf; }
+.cancel-dialog h2 { margin: 0 0 12px; font-size: 26px; }
+.cancel-dialog p { margin: 0; color: var(--muted); font-size: 20px; }
+.cancel-dialog-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; margin-top: 20px; }
+.cancel-dialog-actions .prototype-button { margin-top: 0; }
+.danger-button { border-color: #8a1f1f; background: #8a1f1f; color: #fff; }
+.danger-button:hover { border-color: #6f1717; background: #6f1717; }
+.page-footer { display: flex; justify-content: space-between; gap: 12px; padding: 15px 5%; border-top: 1px solid var(--line); background: #fff; color: var(--muted); font-size: 16px; }
+@media (max-width: 900px) {
+  .sidebar { width: 220px; }
+  .main-content { margin-left: 220px; }
+}
+@media (max-width: 700px) {
+  .sidebar { position: static; width: auto; padding: 12px 14px; }
+  .brand { margin: 0 0 10px; }
+  .sidebar-label, .sidebar-help, .sidebar-footer { display: none; }
+  .nav-menu { grid-template-columns: 1fr 1fr; gap: 4px 7px; }
+  .nav-item { min-height: 48px; gap: 7px; padding: 7px; font-size: 18px; }
+  .main-content { margin: 0; }
+  .topbar { min-height: 66px; padding: 10px 16px; }
+  .mobile-brand-mark { display: grid; width: 36px; height: 36px; font-size: 25px; }
+  .profile-avatar { width: 44px; height: 44px; }
+  .profile-copy span { font-size: 16px; }
+  .logout-link { margin-left: 0; font-size: 18px; }
+  .page-container { padding: 27px 16px 35px; }
+  .welcome-row { align-items: flex-start; flex-direction: column; }
+  .btn-large { width: 100%; }
+  .section-block { margin-top: 27px; }
+  .appointment-card { gap: 12px; padding: 14px; }
+  .stepper { padding: 12px 10px; }
+  .step { flex-direction: column; gap: 4px; }
+  .step strong { font-size: 16px; }
+  .step-line { margin: 0 6px; }
+  .booking-content { padding: 17px 13px; }
+  .page-footer { flex-direction: column; padding: 13px 16px; }
+}
+@media (max-width: 420px) {
+  .profile-copy { display: none; }
+  .page-container { padding-right: 13px; padding-left: 13px; }
+  .step-caption { max-width: 135px; font-size: 16px; text-align: right; }
+  .cancel-dialog { padding: 20px; }
+  .cancel-dialog-actions { flex-direction: column-reverse; }
+  .cancel-dialog-actions .prototype-button { width: 100%; }
+}
